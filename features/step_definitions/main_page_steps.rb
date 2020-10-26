@@ -25,3 +25,17 @@ Então('visualiza a tela de sucesso') do
     sleep 4
     expect(@mp.assert_success_screen).to eql("Information sent successfully!" )
 end
+
+Quando('tocar no botao de idioma') do
+    @mp.language_button
+    sleep 1
+end
+
+Quando('selecionar portugues') do
+    @mp.portuguese_button
+end
+
+Então('visualiza a tela do formulario com texto em portugues') do
+    sleep 2
+    expect(@mp.assert_portuguese_text).to eql("Está é a primeira página de nosso forms.")
+end
