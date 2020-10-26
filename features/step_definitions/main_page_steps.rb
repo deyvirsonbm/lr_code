@@ -12,6 +12,7 @@ Quando('tocar no botao de submit') do
 end
 
 Então('visualiza o alerta de erro do campo nome') do
+    sleep 1
     raise 'Não exibiu alerta de Erro' if @mp.alert_name_error != "This field is required."
 end
 
